@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+import configViewEngine from "./configs/viewEngine";
+
+configViewEngine(app);
 
 app.get("/", (req, res) => {
-  res.send("Hello World! My name is Hung");
+  res.render("index.ejs");
 });
 
 app.get("/about", (req, res) => {
